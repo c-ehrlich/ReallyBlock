@@ -17,7 +17,5 @@ const observer = new MutationObserver((mutationList, _observer) => {
     findAndDeleteBlockedMessages();
   }
 });
-observer.observe(targetNode, config);
 
-// run it once right from the start
-findAndDeleteBlockedMessages();
+observer.observe(targetNode, config);
