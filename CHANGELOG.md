@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.5
+- minor performance and code clarity improvements
+
 ## 0.0.4
 - improve performance by only searching the added nodes and their child nodes instead of the entire document
 

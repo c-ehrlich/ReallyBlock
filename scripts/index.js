@@ -1,14 +1,22 @@
 function findAndDeleteBlockedMessages(addedNodes) {
   addedNodes.forEach(node => {
     const messages = node.querySelectorAll("[class^=blockedSystemMessage-]");
-    const containers = [...messages].map(item => item.parentElement.parentElement.parentElement);
-    containers.forEach((item) => item.style.display = "none");
+    messages.forEach((message) => {
+      const parent = message.parentElement.parentElement.parentElement;
+      if (parent) {
+        parent.style.display = "none";
+      }
+    });
 
-    const questions = node.querySelectorAll("[class^=firstMessageContent-")
-    const questionContainers = [...questions]
-      .filter(item => item.textContent.includes("Post contains a blocked message"))
-      .map(item => item.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement);
-    questionContainers.forEach((item) => item.style.display = "none");
+    const forumPosts = node.querySelectorAll("[class^=firstMessageContent-")
+    forumPosts.forEach((forumPost) => {
+      if (forumPost.textContent.includes("Post contains a blocked message")) {
+        const parent = forumPost.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+        if (parent) {
+          parent.style.display = "none";
+        }
+      };
+    })
   });
 }
 

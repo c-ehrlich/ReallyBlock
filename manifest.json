@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ReallyBlock",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Fully hide messages and threads from blocked discord users",
     "icons": {
         "16": "images/icon-16.png",
