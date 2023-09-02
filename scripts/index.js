@@ -13,8 +13,11 @@ function findAndDeleteBlockedMessages() {
 const targetNode = document.querySelector("body");
 const config = { attributes: true, childList: true, subtree: true };
 const observer = new MutationObserver((mutationList, _observer) => {
-  for (const _mutation of mutationList) {
-    findAndDeleteBlockedMessages();
+  for (const mutation of mutationList) {
+    if (mutation.addedNodes.length > 0) {
+      // TODO: only check the added nodes
+      findAndDeleteBlockedMessages();
+    }
   }
 });
 
