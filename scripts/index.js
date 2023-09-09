@@ -1,6 +1,6 @@
 function findAndDeleteBlockedMessages(addedNodes) {
   addedNodes.forEach(node => {
-    if (typeof node !== "string") {
+    if ('querySelectorAll' in node) {
       const messages = node.querySelectorAll("[class^=blockedSystemMessage-]");
       messages.forEach((message) => {
         const parent = message.parentElement.parentElement.parentElement;

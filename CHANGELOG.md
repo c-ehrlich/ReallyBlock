@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.7
+- bugfix: catch all cases where the node doesn't have `querySelectorAll`
+
 ## 0.0.6
 - bugfix: don't try to run `querySelectorAll` on string nodes
 
