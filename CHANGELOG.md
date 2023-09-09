@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.6
+- bugfix: don't try to run `querySelectorAll` on string nodes
+
 ## 0.0.5
 - minor performance and code clarity improvements
 
